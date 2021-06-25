@@ -22,7 +22,7 @@ def home_view(request, *args, **kwargs):
     return render(request, "home.html",context)
 
 #View to list items
-@api_view(['GET'])
+@api_view(['POST'])
 @permission_classes((IsAuthenticated,))
 def list_items(request):
     title = 'List of Items'

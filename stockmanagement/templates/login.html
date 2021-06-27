@@ -3,13 +3,14 @@
 
 <h2>Login</h2>
 <form method="post">{% csrf_token %}
+
 	{% for field in login_form %}
 		<p>
 			{{field.label_tag}}
 			{{field}}
 
 			{% if field.help_text %}
-				<small style="color: grey;">{{field.help_text}}</small>
+				<small style="color: grey;"></small>
 			{% endif %}
 
 			{% for error in field.errors %}
@@ -20,6 +21,5 @@
 	<button type="submit">Login</button>
 
 </form>
-
 
 {% endblock content %}

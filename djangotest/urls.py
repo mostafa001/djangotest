@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from stockmanagement.views import home_view, list_items, add_items, delete_items, update_items
+from stockmanagement.views import home_view, list_items, add_items, delete_items, update_items, sell_items, sales_history
 from account.views import login_view, logout_view
 from rest_framework_simplejwt import views as jwt_views
 
@@ -27,6 +27,8 @@ urlpatterns = [
     path('api/add_items/', add_items, name='add_items'),
     path('api/delete_items/<str:id>/', delete_items, name="delete_items"),
     path('api/update_items/<str:id>/', update_items, name="update_items"),
+    path('api/sell_items/<str:id>/', sell_items, name="sell_items"),
+    path('api/sales_history/<str:id>/', sales_history, name="sales_history"),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),

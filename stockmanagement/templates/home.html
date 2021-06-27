@@ -1,4 +1,4 @@
 {% block content %}
 <h2>{{ title }}</h2>
-<p>{% if message == '' and message != None %}{{message}}  <button type="submit" onclick="location.href='login';">Login</button>{%else %} {{message}} {% endif %}</p>
+<p>{% if message == '' and message != None %}{{message}}  <button type="submit" onclick="location.href='login';">Login</button>{%else %} {{message}} <button type="submit" onclick="location.href='/api/list_items/';">List items</button> <button type="submit" onclick="location.href='/api/add_items/';">Add items</button> {% endif %}</p>
 {% endblock content %}

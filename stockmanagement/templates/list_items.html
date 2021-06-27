@@ -4,9 +4,10 @@
 	<title>Items List</title>
 </head>
 <body>
+
 	{{title}}<br>
 	{% for instance in query %}
-    {{instance.items}}, {{instance.description}}, {{instance.quantity}} <th><u><td><a href="{% url 'delete_items' instance.id %}">Delete</a></td></u>&nbsp; &nbsp;</th><th><u><td><a href="{% url 'update_items' instance.id %}">Update</a></td></u></th><br>
+    {{instance.items}}, {{instance.description}}, {{instance.quantity}}, {{instance.receive_quantity}} <th><u><td><a href="{% url 'delete_items' instance.id %}">Delete</a></td></u>&nbsp; &nbsp;</th><th><u><td><a href="{% url 'update_items' instance.id %}">Update</a></td></u></th>   </th><th><u><td><a href="{% url 'sell_items' instance.id %}">Sell</a></td></u></th>   </th><th><u><td><a href="{% url 'sales_history' instance.id %}">Sales History</a></td></u></th><br>
 
 	{% endfor %}
 

@@ -6,6 +6,9 @@ from django.contrib.auth.hashers import PBKDF2PasswordHasher
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 from django.conf import settings
+from rest_framework_simplejwt import views as jwt_views
+import json
+import requests
 
 # Create your views here.
 
@@ -22,7 +25,7 @@ def login_view(request, *args, **kwargs):
             user = authenticate(username=username, password=password)
             if user:
                 login(request, user)
-                return redirect("home")
+                return redirect('home')
     else:
         context['login_form'] = form
     return render(request, 'login.html', context)
@@ -30,4 +33,3 @@ def login_view(request, *args, **kwargs):
 def logout_view(request):
 	logout(request)
 	return redirect('home')
-

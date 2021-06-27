@@ -17,3 +17,13 @@ class UpdateItem(forms.ModelForm):
 		fields = ['category', 'items', 'description', 'quantity', 'receive_quantity']
 
 
+class SellItem(forms.ModelForm):
+
+    nb_sells = forms.CharField(max_length=10)
+
+    class Meta:
+        model = Stock
+        fields = ['category', 'items', 'description', 'quantity', 'nb_sells']
+
+    
+

@@ -35,7 +35,7 @@ def list_items(request):
 	}
     return render(request, "list_items.html", context)
 
-#View to add an item to db
+#View to add an item to db stock
 @api_view(['POST', 'GET'])
 @permission_classes((IsAuthenticated,))
 def add_items(request):

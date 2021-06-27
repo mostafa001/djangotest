@@ -11,7 +11,7 @@ import json
 import requests
 
 # Create your views here.
-
+# View to Login 
 def login_view(request, *args, **kwargs):
     user = request.user
     context = {}
@@ -30,6 +30,3 @@ def login_view(request, *args, **kwargs):
         context['login_form'] = form
     return render(request, 'login.html', context)
 
-def logout_view(request):
-	logout(request)
-	return redirect('home')
